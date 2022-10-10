@@ -1,0 +1,33 @@
+
+/* MD Modifictaion 10/09 start */
+nav {
+    height: 10vh;
+    background-color: rgb(28, 88, 28);
+    width: 100%;
+    color: tan
+}
+
+main {
+    height: 90vh;
+    background-color: tan;
+    width: 100%;
+}
+
+#canvas {
+    background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/41/2d/80/waterton-lake-national.jpg?w=600&h=400&s=1");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#location {
+    background-color: rgb(231, 228, 228);
+    padding: 50px;
+}
+
+#search-bar {
+    background-color: white;
+}
+
+/* MD Modification 10/09 End */
+
