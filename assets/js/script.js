@@ -46,8 +46,6 @@ async function NPScall(latitude, longitude) {
         getData();
     }
     
-// End of Modification by Shreya M///////
-
 
 
 
@@ -143,3 +141,5 @@ function renderWeatherInfo(weatherInfo){
 }
 
 //End of Modification by Silvia Z//
+=======
+
