@@ -30,6 +30,7 @@ main {
 }
 
 /* MD Modification 10/09 End */
+/* Begin of modification by Shreya M for dynamically created cards in JS file */
 img{
     align-items: flex-end;
     height: 200px;
@@ -44,3 +45,4 @@ img{
     background-color: aliceblue;
 
 }
+/* End of modification by Shreya M for dynamically created cards in JS file */
