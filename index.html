@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,30 +9,27 @@
     <!-- MD Modification start 10/09-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- MD Modification end -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-    rel="stylesheet"
-  />
-  <link
-  rel="stylesheet"
-  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-  crossorigin="anonymous"
-/>
-    <link href = "assets/css/style.css" rel = "stylesheet">
-     <!-- Fevicon  for website-->
-     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Fevicon  for website-->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
+
 <body >
     <!-- MD Modification start 10/09-->
     <nav class="">
-        <sub class = "">BrandLogo</sub>
-        <ul class = "right">
-        <li><a href="#localUserPage">Local summary</a></li>
+        <sub class="">BrandLogo</sub>
+        <ul class="right">
+            <li><a href="#localUserPage">Local summary</a></li>
         </ul>
     </nav>
     <!-- Backgound image container -->
     <main class = "col-s12 valign-wrapper" id = "canvas">
+        <!-- Sivia Z Modification - add weather section -->
+        <section id="weather"></section>
+        <!-- Sivia Z Modification - add weather section end  -->
         <section id="location" class = "container ">
             <input type = "text" id = "search-bar" placeholder = "Your Location Here!" class = "col-s6">
             <!--Start of modification  by Shreya M for adding click button -->
@@ -39,6 +37,8 @@
             
              <!--End of modification  by Shreya M for adding click button -->
         </section>
+            
+       
         <div id ="search-results"></div><br>
     </main>
     <!-- MD Modification end -->
@@ -47,4 +47,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

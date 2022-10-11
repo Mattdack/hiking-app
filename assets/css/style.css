@@ -46,3 +46,55 @@ img{
 
 }
 /* End of modification by Shreya M for dynamically created cards in JS file */
+
+/* SilviaZ Modification 10/11*/
+#weather{
+    display:flex;
+    flex-wrap: wrap;
+    width:300px;
+    margin:10px;
+    justify-content: center;
+}
+
+.weather-box{
+    background-color: rgb(115, 145, 115);
+    color:aliceblue;
+    width:40%;
+    margin:10px;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.weatherIconImg {
+    max-width:30px;
+    height: 30px;
+}
+
+
+
+/* SilviaZ Modification 10/11 start*/
+#weather{
+    display:flex;
+    flex-wrap: wrap;
+    width:300px;
+    margin:10px;
+    justify-content: center;
+}
+
+.weather-box{
+    background-color: rgb(115, 145, 115);
+    color:aliceblue;
+    width:40%;
+    margin:10px;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.weatherIconImg {
+    max-width:30px;
+    height: 30px;
+}
+
+/* SilviaZ Modification 10/11 end*/
+
+
