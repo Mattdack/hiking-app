@@ -35,6 +35,52 @@ async function NPScall(latitude, longitude) {
         var parksData = await response.json();
         console.log(parksData.data);
     //    Here we need to grab data to display on page //
+    const products = parksData.data;
+
+    for (let item in products) {
+
+      /*Implementation - Card*/
+      let getPrincipalContainer = document.getElementById("search-results");
+      let createCard = document.createElement("div")
+      createCard.className = 'product-card';
+      getPrincipalContainer.append(createCard)
+
+      /*Implementing Names of the park */
+      let createName = document.createElement("h4")
+      createName.className = "card-title"
+      createName.innerText = parksData.data[item].fullName
+      createCard.appendChild(createName)
+
+
+      /*Implémentation de l'img - IMG*/
+      let createImg = document.createElement("img")
+      createImg.className = "card-img-top";
+      createImg.src = parksData.data[item].images[0].url
+      createCard.appendChild(createImg)
+
+      
+      /*Implementing Activities Section*/
+      
+      var allAct = parksData.data[item].activities
+      console.log(allAct)
+      for(var i=0; i<allAct.length; i++ ){
+        let createPrice = document.createElement("li")
+        let currentAct = allAct[i].name
+        console.log(currentAct)
+        createPrice.className = "park-activities"
+        createPrice.innerHTML = currentAct
+        createCard.appendChild(createPrice)
+      }
+     
+
+      /*Implementing Links- Link to National parks*/
+      let createLink = document.createElement("a")
+      createLink.className = "product-sheet-link"
+      createLink.innerHTML = parksData.data[item].url
+      createCard.appendChild(createLink)
+    }
+    
+      
     
        
        
