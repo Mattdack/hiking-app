@@ -76,26 +76,34 @@ async function NPScall(latitude, longitude) {
 
 
         /*Implémentation de l'img - IMG*/
+
+        let imgAndListSec = document.createElement("div");
+        imgAndListSec.className = "img-list"
+
         let createImg = document.createElement("img")
         createImg.className = "card-img-top";
         createImg.src = parksData.data[item].images[0].url
-        createCard.appendChild(createImg)
+        imgAndListSec.appendChild(createImg)
 
 
         /*Implementing Activities Section*/
 
         var allAct = parksData.data[item].activities
         console.log(allAct)
+        let createActivitySec = document.createElement("div");
+        createActivitySec.className = "park-activity-div"
         for (var i = 0; i < allAct.length; i++) {
             let createPrice = document.createElement("li")
             let currentAct = allAct[i].name
             console.log(currentAct)
             createPrice.className = "park-activities"
             createPrice.innerHTML = currentAct
-            createCard.appendChild(createPrice)
+            createActivitySec.appendChild(createPrice)
         }
+        imgAndListSec.appendChild(createActivitySec);
 
-
+        createCard.appendChild(imgAndListSec);
+        
         /*Implementing Links- Link to National parks*/
         let createLink = document.createElement("a")
         createLink.className = "product-sheet-link"
