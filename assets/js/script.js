@@ -1,22 +1,40 @@
+// Begin of modification by Shreya M on Oct 10 2022 for adding Geocoding & NPS API ///
 
-// Begin of modification by Shreya M on Oct 10 2022 for adding Geocoding & NPS API ///    
+function init() {
+  var options = {
+    types: ['(cities)'],
+    componentRestrictions: {country: "us"}
+  }
+  var userEntry = document.getElementById('search-bar');
+  new google.maps.places.Autocomplete(userEntry, options);
+
+}
+
+google.maps.event.addDomListener(window, 'load', init);
+
+
 
 function getData() {
-    var latitude;
-    var longitude;
+  var latitude; //do we need these called here? -MD
+  var longitude;
+  // var fullAddress = document.getElementById("search-bar");
 
-    var newName = document.getElementById("search-bar");
-    console.log("new name::" + newName)
+  var newName = document.getElementById("search-bar");
+  console.log("new name::" + newName);
 
-    fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + newName.value + '&limit=1&appid=7fce6dca761e606465fe67951ea85095')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            var latitude = data[0].lat;
-            var longitude = data[0].lon;
+  fetch(
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
+      newName.value +
+      "&limit=1&appid=7fce6dca761e606465fe67951ea85095"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      var latitude = data[0].lat;
+      var longitude = data[0].lon;
 
-            console.log("lat::" + latitude)
-            console.log("Lon::" + longitude)
+      console.log("lat::" + latitude);
+      console.log("Lon::" + longitude);
 
 
             NPScall(latitude, longitude)
@@ -94,30 +112,39 @@ async function NPScall(latitude, longitude) {
 var APIKey = "0dfdd54d395928d4b417913dd112c602";
 
 function getWeatherApi(latitude, longitude) {
-            var requestUrlToday = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" +latitude + "&units=imperial&appid=" + APIKey;
-            fetch(requestUrlToday)
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function(todayData) {
-                    console.log(todayData);
+  var requestUrlToday =
+    "https://api.openweathermap.org/data/2.5/weather?lat=" +
+    latitude +
+    "&lon=" +
+    latitude +
+    "&units=imperial&appid=" +
+    APIKey;
+  fetch(requestUrlToday)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (todayData) {
 
-                    var todayInfo = {
-                        Date:moment().format('ll'),
-                        Icon:todayData.weather[0].icon,
-                        Temp:todayData.main.temp,
-                        Wind:todayData.wind.speed,
-                        Humidity:todayData.main.humidity
-                    }
-                    console.log(todayInfo);
+      var todayInfo = {
+        Date: moment().format("ll"),
+        Icon: todayData.weather[0].icon,
+        Temp: todayData.main.temp,
+        Wind: todayData.wind.speed,
+        Humidity: todayData.main.humidity,
+      };
 
-                    var requestUrlNextDay ="https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + latitude + "&units=imperial&appid=" + APIKey;
-                    fetch(requestUrlNextDay)
-                        .then(function (response) {
-                        return response.json();
-                    })
-                    .then(function(nextDayData) {
-                        console.log(nextDayData);
+      var requestUrlNextDay =
+        "https://api.openweathermap.org/data/2.5/forecast?lat=" +
+        latitude +
+        "&lon=" +
+        latitude +
+        "&units=imperial&appid=" +
+        APIKey;
+      fetch(requestUrlNextDay)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (nextDayData) {
 
                     var nextDayInfo = {
                         Date : new Date(nextDayData.list[6].dt*1000).toLocaleDateString("en-US"),
@@ -143,39 +170,32 @@ function renderWeatherInfo(weatherInfo){
     weatherDiv.textContent = "";
     weatherDiv.classList.add("weather-box");
 
-    var date = document.createElement('div');
-    var icon = document.createElement('img');
-    var temp = document.createElement('div');
-    var wind = document.createElement('div');
-    var humidity = document.createElement('div');
+  var date = document.createElement("div");
+  var icon = document.createElement("img");
+  var temp = document.createElement("div");
+  var wind = document.createElement("div");
+  var humidity = document.createElement("div");
 
-    date.classList.add("weatherInfoDiv"); 
-    icon.classList.add("weatherIconImg")
-    temp.classList.add("weatherInfoDiv");
-    wind.classList.add("weatherInfoDiv");
-    humidity.classList.add("weatherInfoDiv");
+  date.classList.add("weatherInfoDiv");
+  icon.classList.add("weatherIconImg");
+  temp.classList.add("weatherInfoDiv");
+  wind.classList.add("weatherInfoDiv");
+  humidity.classList.add("weatherInfoDiv");
 
-    date.textContent = weatherInfo.Date 
-    var a = weatherInfo.Icon;
-    icon.src = "https://openweathermap.org/img/w/"+ a + ".png";
-    temp.textContent = "Temp: " + weatherInfo.Temp + "°F";
-    wind.textContent = "Wind: " + weatherInfo.Wind + " MPH";
-    humidity.textContent = "Humidity: " + weatherInfo.Humidity + " %";
+  date.textContent = weatherInfo.Date;
+  var a = weatherInfo.Icon;
+  icon.src = "https://openweathermap.org/img/w/" + a + ".png";
+  temp.textContent = "Temp: " + weatherInfo.Temp + "°F";
+  wind.textContent = "Wind: " + weatherInfo.Wind + " MPH";
+  humidity.textContent = "Humidity: " + weatherInfo.Humidity + " %";
 
-    weatherDiv.append(date);
-    weatherDiv.append(icon);
-    weatherDiv.append(temp);
-    weatherDiv.append(wind);
-    weatherDiv.append(humidity);
+  weatherDiv.append(date);
+  weatherDiv.append(icon);
+  weatherDiv.append(temp);
+  weatherDiv.append(wind);
+  weatherDiv.append(humidity);
 
-    weatherSection.append(weatherDiv);
+  weatherSection.append(weatherDiv);
 }
 
 //End of Modification by Silvia Z//
-
-
-
-
-
-
-
