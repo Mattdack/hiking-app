@@ -30,7 +30,22 @@ main {
 }
 
 /* MD Modification 10/09 End */
+/* Begin of modification by Shreya M for dynamically created cards in JS file */
+img{
+    align-items: flex-end;
+    height: 200px;
+    width:260px;
+    margin-top: 5%;
+}
+.product-card{
+    margin:auto;
+    height: 100%;
+    width: 100%;
+    display:flexbox;
+    background-color: aliceblue;
 
+}
+/* End of modification by Shreya M for dynamically created cards in JS file */
 
 /* SilviaZ Modification 10/11*/
 #weather{
