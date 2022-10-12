@@ -36,47 +36,81 @@ function getData() {
       console.log("lat::" + latitude);
       console.log("Lon::" + longitude);
 
-      NPScall(latitude, longitude);
-    });
+
+            NPScall(latitude, longitude)
+
+            // Silvia Z add getWeatherApi function
+            getWeatherApi(latitude, longitude);
+
+
+        })
 }
 
 async function NPScall(latitude, longitude) {
-  // Await expressions make promise-returning functions behave as though they're
-  // synchronous by suspending execution until the returned promise
-  // is fulfilled or rejected. The resolved value of the promise is treated as the return
-  //  value of the await expression. Use of async and await enables the use of ordinary try / catch blocks around asynchronous code.
-  // As of now  fetch limit is set to 10 parks
-  var response = await fetch(
-    "https://developer.nps.gov/api/v1/parks?latitude=" +
-      latitude +
-      "&longitude=" +
-      longitude +
-      "&limit=10&api_key=rezSm4lpwSFY7eCcu9JiJaOp8bxxfzOsYTzKa742"
-  );
+    // Await expressions make promise-returning functions behave as though they're 
+    // synchronous by suspending execution until the returned promise 
+    // is fulfilled or rejected. The resolved value of the promise is treated as the return
+    //  value of the await expression. Use of async and await enables the use of ordinary try / catch blocks around asynchronous code.
+    // As of now  fetch limit is set to 10 parks
+    var response = await fetch('https://developer.nps.gov/api/v1/parks?latitude=' + latitude + '&longitude=' + longitude + '&limit=10&api_key=rezSm4lpwSFY7eCcu9JiJaOp8bxxfzOsYTzKa742')
 
-  var parksData = await response.json();
-  console.log(parksData.data);
-  //    Here we need to grab data to display on page //
+    var parksData = await response.json();
+    console.log(parksData.data);
+    //    Here we need to grab data to display on page //
+    const products = parksData.data;
+
+
+    for (let item in products) {
+
+        /*Implementation - Card*/
+        let getPrincipalContainer = document.getElementById("search-results");
+        let createCard = document.createElement("div")
+        createCard.className = 'product-card';
+        getPrincipalContainer.append(createCard)
+
+        /*Implementing Names of the park */
+        let createName = document.createElement("h4")
+        createName.className = "card-title"
+        createName.innerText = parksData.data[item].fullName
+        createCard.appendChild(createName)
+
+
+        /*Implémentation de l'img - IMG*/
+        let createImg = document.createElement("img")
+        createImg.className = "card-img-top";
+        createImg.src = parksData.data[item].images[0].url
+        createCard.appendChild(createImg)
+
+
+        /*Implementing Activities Section*/
+
+        var allAct = parksData.data[item].activities
+        console.log(allAct)
+        for (var i = 0; i < allAct.length; i++) {
+            let createPrice = document.createElement("li")
+            let currentAct = allAct[i].name
+            console.log(currentAct)
+            createPrice.className = "park-activities"
+            createPrice.innerHTML = currentAct
+            createCard.appendChild(createPrice)
+        }
+
+
+        /*Implementing Links- Link to National parks*/
+        let createLink = document.createElement("a")
+        createLink.className = "product-sheet-link"
+        //   Need to make the link ckiclkable
+        createLink.innerHTML = parksData.data[item].url
+        createCard.appendChild(createLink)
+    }
 }
 
-function DefaultScreen() {
-  document.getElementById("search-bar").defaultValue = "London";
-  getData();
-}
+    
 
 //Start of Modification by Silvia Z//
 
 var APIKey = "0dfdd54d395928d4b417913dd112c602";
-// var formInput = document.querySelector('#search-bar');
 
-// function handleFormClick(event) {
-//     event.preventDefault();
-
-//     getApi(formInput.value);
-//     formInput.value="";
-// }
-
-getWeatherApi("44.34", "10.99");
 function getWeatherApi(latitude, longitude) {
   var requestUrlToday =
     "https://api.openweathermap.org/data/2.5/weather?lat=" +
@@ -112,28 +146,29 @@ function getWeatherApi(latitude, longitude) {
         })
         .then(function (nextDayData) {
 
-          var nextDayInfo = {
-            Date: new Date(nextDayData.list[6].dt * 1000).toLocaleDateString(
-              "en-US"
-            ),
-            Icon: nextDayData.list[6].weather[0].icon,
-            Temp: nextDayData.list[6].main.temp,
-            Wind: nextDayData.list[6].wind.speed,
-            Humidity: nextDayData.list[6].main.humidity,
-          };
+                    var nextDayInfo = {
+                        Date : new Date(nextDayData.list[6].dt*1000).toLocaleDateString("en-US"),
+                        Icon :nextDayData.list[6].weather[0].icon,
+                        Temp : nextDayData.list[6].main.temp,
+                        Wind : nextDayData.list[6].wind.speed,
+                        Humidity : nextDayData.list[6].main.humidity,
+                    }
+                    console.log(nextDayInfo);
+                    
+                    var weatherSection = document.querySelector("#weather");
+                    weatherSection.textContent = "";
+                    renderWeatherInfo(todayInfo);
+                    renderWeatherInfo(nextDayInfo);
+                    })
+                })
+        };
+            
+function renderWeatherInfo(weatherInfo){
+    var weatherSection = document.querySelector("#weather");
 
-          renderWeatherInfo(todayInfo);
-          renderWeatherInfo(nextDayInfo);
-        });
-    });
-}
-
-function renderWeatherInfo(weatherInfo) {
-  var weatherSection = document.querySelector("#weather");
-  var weatherDiv = document.createElement("div");
-
-  weatherDiv.classList.add("weather-box");
-  weatherDiv.textContent = "";
+    var weatherDiv = document.createElement('div');
+    weatherDiv.textContent = "";
+    weatherDiv.classList.add("weather-box");
 
   var date = document.createElement("div");
   var icon = document.createElement("img");
@@ -163,4 +198,4 @@ function renderWeatherInfo(weatherInfo) {
   weatherSection.append(weatherDiv);
 }
 
-// End of Modification by Silvia Z
+//End of Modification by Silvia Z//

@@ -30,31 +30,22 @@ main {
 }
 
 /* MD Modification 10/09 End */
-
-
-/* SilviaZ Modification 10/11*/
-#weather{
-    display:flex;
-    flex-wrap: wrap;
-    width:300px;
-    margin:10px;
-    justify-content: center;
+/* Begin of modification by Shreya M for dynamically created cards in JS file */
+img{
+    align-items: flex-end;
+    height: 200px;
+    width:260px;
+    margin-top: 5%;
 }
+.product-card{
+    margin:auto;
+    height: 100%;
+    width: 100%;
+    display:flexbox;
+    background-color: aliceblue;
 
-.weather-box{
-    background-color: rgb(115, 145, 115);
-    color:aliceblue;
-    width:40%;
-    margin:10px;
-    padding:5px;
-    border-radius: 5px;
 }
-
-.weatherIconImg {
-    max-width:30px;
-    height: 30px;
-}
-
+/* End of modification by Shreya M for dynamically created cards in JS file */
 
 
 /* SilviaZ Modification 10/11 start*/
@@ -82,4 +73,9 @@ main {
 
 /* SilviaZ Modification 10/11 end*/
 
-
+/* SilviaZ Modification data info 10/11 start */
+#canvas{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}

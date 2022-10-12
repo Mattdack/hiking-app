@@ -17,7 +17,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
 
-<body>
+<body >
     <!-- MD Modification start 10/09-->
     <nav class="">
         <sub class="">BrandLogo</sub>
@@ -26,13 +26,19 @@
         </ul>
     </nav>
     <!-- Backgound image container -->
-    <main class="col-s12 valign-wrapper" id="canvas">
+    <main class = "col-s12 valign-wrapper" id = "canvas">
         <!-- Sivia Z Modification - add weather section -->
         <section id="weather"></section>
         <!-- Sivia Z Modification - add weather section end  -->
-        <section id="location" class="container ">
-            <input type="text" id="search-bar" placeholder="Your Location Here!">
+        <section id="location" class = "container ">
+            <input type = "text" id = "search-bar" placeholder = "Your Location Here!" class = "col-s6">
+            <!--Start of modification  by Shreya M for adding click button -->
+            <button type="button" onclick="getData()">Click Me</button>  
+            
+             <!--End of modification  by Shreya M for adding click button -->
         </section>
+            
+       
         <div id ="search-results"></div><br>
     </main>
     <!-- MD Modification end -->
