@@ -21,6 +21,10 @@ function getData() {
 
             NPScall(latitude, longitude)
 
+            // Silvia Z add getWeatherApi function
+            getWeatherApi(latitude, longitude);
+
+
         })
 }
 
@@ -36,6 +40,7 @@ async function NPScall(latitude, longitude) {
     console.log(parksData.data);
     //    Here we need to grab data to display on page //
     const products = parksData.data;
+
 
     for (let item in products) {
 
@@ -84,23 +89,10 @@ async function NPScall(latitude, longitude) {
 
     
 
-
-
-
 //Start of Modification by Silvia Z//
 
 var APIKey = "0dfdd54d395928d4b417913dd112c602";
-console.log("hello");
-// var formInput = document.querySelector('#search-bar');
 
-// function handleFormClick(event) {
-//     event.preventDefault();
-    
-//     getApi(formInput.value);
-//     formInput.value="";
-// }
-
-getWeatherApi("44.34","10.99");
 function getWeatherApi(latitude, longitude) {
             var requestUrlToday = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" +latitude + "&units=imperial&appid=" + APIKey;
             fetch(requestUrlToday)
@@ -136,6 +128,8 @@ function getWeatherApi(latitude, longitude) {
                     }
                     console.log(nextDayInfo);
                     
+                    var weatherSection = document.querySelector("#weather");
+                    weatherSection.textContent = "";
                     renderWeatherInfo(todayInfo);
                     renderWeatherInfo(nextDayInfo);
                     })
@@ -144,10 +138,10 @@ function getWeatherApi(latitude, longitude) {
             
 function renderWeatherInfo(weatherInfo){
     var weatherSection = document.querySelector("#weather");
-    var weatherDiv = document.createElement('div');
 
-    weatherDiv.classList.add("weather-box");
+    var weatherDiv = document.createElement('div');
     weatherDiv.textContent = "";
+    weatherDiv.classList.add("weather-box");
 
     var date = document.createElement('div');
     var icon = document.createElement('img');
@@ -178,3 +172,10 @@ function renderWeatherInfo(weatherInfo){
 }
 
 //End of Modification by Silvia Z//
+
+
+
+
+
+
+
