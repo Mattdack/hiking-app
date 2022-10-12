@@ -12,8 +12,8 @@ function getData() {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            var latitude = data[0].lat;
-            var longitude = data[0].lon;
+             latitude = data[0].lat;
+             longitude = data[0].lon;
 
             console.log("lat::" + latitude)
             console.log("Lon::" + longitude)
@@ -172,7 +172,6 @@ function renderWeatherInfo(weatherInfo){
 }
 
 //End of Modification by Silvia Z//
-
 
 
 

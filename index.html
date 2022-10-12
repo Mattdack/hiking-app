@@ -17,35 +17,76 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
 
-<body >
+<body>
     <!-- MD Modification start 10/09-->
     <nav class="">
         <sub class="">BrandLogo</sub>
         <ul class="right">
             <li><a href="#localUserPage">Local summary</a></li>
+            <!-- Begin Modification by Shreya M to Trigger/Open The Modal -->
+            <button id="myBtn">Click!</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <!-- <p>🚴‍♂️........ Travel Journal 🚴........</p> -->
+                    <section>
+                        <form action="form.html" method="get" id="myForm">
+                            <fieldset>
+                                <legend>🚴‍♂️........ Travel Journal 🚴........</legend>
+                                <label for="citySate">Enter you City/State:</label><br />
+                                <input type="text" id="citySate" name="citySate" placeholder="City/State !"
+                                    class="col-s6"><br><br>
+                                <label for="nPark">Enter the National park you visited:</label><br />
+                                <input type="text" id="nPark" name="nPark" placeholder="National Park Visited!"
+                                    class="col-s6"><br><br>
+                                <label for="rating">Give your rating on the scale of 1-10</label><br />
+                                <input type="text" id="rating" name="rating" placeholder="WOW factor!"
+                                    class="col-s6"><br>
+                                <label for="discription">Discription</label><br />
+                                <input type="text" id="discription" name="discription" placeholder="Activities I loved!"
+                                    class="col-s6"><br>
+                                <input type="submit" value="Submit">
+                            </fieldset>
+                        </form>
+                    </section>
+
+                    <p>⛰Your Previous Summary⛰</p>
+                    <div id="myDynamicTable"></div>
+                </div>
+
+            </div>
+            <!--End of modification by Shreya M to Trigger/Open The Modal -->
         </ul>
+
     </nav>
     <!-- Backgound image container -->
-    <main class = "col-s12 valign-wrapper" id = "canvas">
+    <main class="col-s12 valign-wrapper" id="canvas">
         <!-- Sivia Z Modification - add weather section -->
         <section id="weather"></section>
         <!-- Sivia Z Modification - add weather section end  -->
-        <section id="location" class = "container ">
-            <input type = "text" id = "search-bar" placeholder = "Your Location Here!" class = "col-s6">
+        <section id="location" class="container ">
+            <input type="text" id="search-bar" placeholder="Your Location Here!" class="col-s6">
             <!--Start of modification  by Shreya M for adding click button -->
-            <button type="button" onclick="getData()">Click Me</button>  
-            
-             <!--End of modification  by Shreya M for adding click button -->
+            <button type="button" onclick="getData()">Click Me</button>
+
+            <!--End of modification  by Shreya M for adding click button -->
         </section>
-            
-       
-        <div id ="search-results"></div><br>
+
+
+        <div id="search-results"></div><br>
     </main>
     <!-- MD Modification end -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/modalScript.js"></script>
+
+
 </body>
 
 </html>
