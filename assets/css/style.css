@@ -1,0 +1,193 @@
+/* MD Modifictaion 10/09 start */
+nav {
+    height: 10vh;
+    background-color: rgb(28, 88, 28);
+    width: 100%;
+    color: tan
+}
+
+main {
+    height: 90vh;
+    background-color: tan;
+    width: 100%;
+}
+
+#canvas {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+
+    background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/41/2d/80/waterton-lake-national.jpg?w=600&h=400&s=1");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#location {
+    background-color: rgb(134, 162, 146);
+    padding: 50px;
+    border-radius: 10px;
+    width:70%;
+    margin-top: 10px;
+}
+
+#search-and-weather{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#search-bar {
+    background-color: white;
+    border-radius: 5px;
+}
+
+#clickButtin{
+    background-color: antiquewhite;
+    border-radius: 5px;
+}
+
+/* MD Modification 10/09 End */
+/* Begin of modification by Shreya M for dynamically created cards in JS file */
+img{
+    height: 200px;
+    width:260px;
+    margin: 5px;
+}
+.product-card{
+    width:80%;
+    margin-top:10px;
+    display:flex;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    border-radius: 10px;
+
+}
+/* End of modification by Shreya M for dynamically created cards in JS file */
+
+
+/* SilviaZ Modification 10/11 start*/
+#weather{
+    display:flex;
+    flex-wrap: wrap;
+    width:25%;
+    margin:10px;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.weather-box{
+    background-color: rgb(115, 145, 115);
+    color:aliceblue;
+    width:40%;
+    margin:10px;
+    padding-right:5px;
+    padding-left:5px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius: 5px;
+}
+
+.weatherIconImg {
+    max-width:30px;
+    height: 30px;
+}
+
+/* SilviaZ Modification 10/11 end*/
+
+#search-results{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+}
+
+.card-title{
+    width: 90%;
+    margin:5px;
+    margin-left:10px;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.img-list{
+    display:flex;
+    flex-wrap: wrap;
+    margin:3px;
+}
+
+.card-img-top{
+    width:30%;  
+    border-radius: 5px;  
+}
+
+.park-activity-div{
+    width:60%;
+    display:flex; 
+    flex-wrap:wrap;
+    margin:10px;
+}
+
+/* // Begin of modification by Shreya M for adding Modal in local summary /////// */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* // End of modification by Shreya M for adding Modal in local summary /////// */
+.park-activities{
+    color:rgb(75, 50, 12);
+    margin-right:3px;
+    font-size: medium;
+
+}
+
+.product-sheet-link{
+    width:90%;
+    margin-left:10px;
+    margin-bottom: 10px;
+}
+
+a {
+    color:black;
+    outline: none;
+    text-decoration: none;
+}
+
+li{
+    list-style-type: square; 
+}
