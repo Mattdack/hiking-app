@@ -71,7 +71,10 @@ function NPScall() {
         .then((response) => response.json())
         .then((parksData) => {
             const products = parksData.data;
-
+            //Silvia Z added- clear the last search info 
+            let getPrincipalContainer = document.getElementById("search-results");
+            getPrincipalContainer.textContent="";
+            // Silvia Z added - end
 
             for (let item in products) {
 
@@ -82,11 +85,14 @@ function NPScall() {
                 getPrincipalContainer.append(createCard)
 
                 /*Implementing Names of the park */
-                let createName = document.createElement("h4")
+                let createName = document.createElement("a")
                 createName.className = "card-title"
                 createName.innerText = parksData.data[item].fullName
                 createCard.appendChild(createName)
-
+                //  Sivlia Z- done - make the title is clickable
+                createName.href = parksData.data[item].url;
+                createName.target="_blank";
+                createCard.appendChild(createName)
 
                 /*Implémentation de l'img - IMG*/
 
@@ -120,8 +126,10 @@ function NPScall() {
                 /*Implementing Links- Link to National parks*/
                 let createLink = document.createElement("a")
                 createLink.className = "product-sheet-link"
-                //   Need to make the link ckiclkable
+                //Silvia Z  make the link ckiclkable
                 createLink.innerHTML = parksData.data[item].url
+                createLink.href = parksData.data[item].url;
+                createLink.target="_blank";
                 createCard.appendChild(createLink)
             }
 
