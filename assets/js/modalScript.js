@@ -1,8 +1,21 @@
 // Begin of modification by Shreya M for adding Modal in local summary ///////
+for (var i = 0; i < localStorage.length; i++) {
 
+    var city = localStorage.getItem("formData",i);
+     console.log(city);
+   
+}
 
 // Key count for local storage 
 var keyCount = 0;
+
+// To fetch the previous data into our table
+
+if(localStorage.getItem("formData")){
+   let tabelData = JSON.parse(window.localStorage.getItem('formData'));
+   console.log(tabelData.nPark)
+    
+}
 
 
 
@@ -35,30 +48,56 @@ window.onclick = function (event) {
 }
 
 
-//  creating table //
-function addTable() {
-    var myTableDiv = document.getElementById("myDynamicTable");
+//  fetching values //
 
-    var table = document.createElement('TABLE');
-    table.border = '1';
+    
 
-    var tableBody = document.createElement('TBODY');
-    table.appendChild(tableBody);
+       if(localStorage.getItem("formData")){
+            var contents = JSON.parse(window.localStorage.getItem('formData'));
+       
+            // console.log(contents.citySate);
+            // console.log(contents.nPark);
+            // console.log(contents.rating);
+            // console.log(contents.discription);
 
-    for (var i = 0; i < 3; i++) {
-        var tr = document.createElement('TR');
-        tableBody.appendChild(tr);
+            let myTableDiv = document.getElementById("myDynamicTable");
+            // let getPrincipalContainer = document.getElementById("search-results");
+                let createStorage = document.createElement("div")
+                createStorage.className = 'product-card1';
+                myTableDiv.append(createStorage)
 
-        for (var j = 0; j < 4; j++) {
-            var td = document.createElement('TD');
-            td.width = '75';
-            td.appendChild(document.createTextNode("Cell " + i + "," + j));
-            tr.appendChild(td);
-        }
-    }
-    myTableDiv.appendChild(table);
+            // let createCard = document.createElement("div")
+            let createName = document.createElement("a")
+            createName.className = "card-title1"
+            // createName.innerText = "State:"+contents.citySate+ " Visited:"+contents.nPark + " ratings given:"+contents.rating+" Discription:"+contents.discription
+            createName.innerText =`State: ${contents.citySate}, Visited:${contents.nPark}
+            ratings given:${contents.rating}
+             Discription:${contents.discription}`
+            createStorage.appendChild(createName)
+       
+    
+
+    // var myTableDiv = document.getElementById("myDynamicTable");
+
+    // var table = document.createElement('TABLE');
+    // table.border = '1';
+
+    // var tableBody = document.createElement('TBODY');
+    // table.appendChild(tableBody);
+
+    // for (var i = 0; i < 3; i++) {
+    //     var tr = document.createElement('TR');
+    //     tableBody.appendChild(tr);
+
+    //     for (var j = 0; j < 4; j++) {
+    //         var td = document.createElement('TD');
+    //         td.width = '75';
+    //         td.appendChild(document.createTextNode("State"+contents.citySate+"" + i + "," + j));
+    //         tr.appendChild(td);
+    //     }
+    // }
+    // myTableDiv.appendChild(table);
 }
-addTable();
 
 
 
@@ -85,4 +124,4 @@ var myForm = document.querySelector("form#myForm");
     
     return false;
   }
-  // End of modification by Shreya M for adding Modal in local summary ///////
+//   End of modification by Shreya M for adding Modal in local summary ///////

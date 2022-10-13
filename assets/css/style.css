@@ -191,3 +191,18 @@ a {
 li{
     list-style-type: square; 
 }
+
+/* Modification By Shreya */
+#myDynamicTable{
+    color:  rgb(28, 88, 28);
+    background-color: tan; 
+}
+.product-card1{
+    background-color: tan; 
+}
+.card-title1{
+    text-align: justify;
+    color:rgb(28, 88, 28); 
+    background-color: tan;  
+}
+/* End of Modification by Shreya */
