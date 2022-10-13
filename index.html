@@ -63,18 +63,21 @@
         </ul>
 
     </nav>
-    <!-- Backgound image container -->
-    <main class="col-s12 valign-wrapper" id="canvas">
-        <!-- Sivia Z Modification - add weather section -->
-        <section id="weather"></section>
-        <!-- Sivia Z Modification - add weather section end  -->
-        <section id="location" class="container ">
-            <input type="text" id="search-bar" placeholder="Your Location Here!" class="col-s6">
-            <!--Start of modification  by Shreya M for adding click button -->
-            <button type="button" onclick="getData()">Click Me</button>
+    <!-- Backgound image container —>    -->
 
-            <!--End of modification  by Shreya M for adding click button -->
-        </section>
+    <main class="col-s12 valign-wrapper" id="canvas">
+        <div id="search-and-weather">
+            <!-- Sivia Z Modification - add weather section -->
+            <section id="weather"></section>
+            <!-- Sivia Z Modification - add weather section end  -->
+            <section id="location" class="container ">
+                <input type="text" id="search-bar" placeholder="Your Location Here!" class="col-s6">
+                <!--Start of modification  by Shreya M for adding click button -->
+                <button type="button" onclick="getData()" id="clickButton">Click Me</button>
+                <!--End of modification  by Shreya M for adding click button -->
+            </section>
+        </div>
+
 
 
         <div id="search-results"></div><br>
@@ -83,8 +86,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB-W00dYSoIRqw5cgM-5x2sM42iO_LSBQo&sensor=false&libraries=places">
-    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB-W00dYSoIRqw5cgM-5x2sM42iO_LSBQo&sensor=false&libraries=places">
+        </script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/modalScript.js"></script>
 
