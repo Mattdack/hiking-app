@@ -103,7 +103,7 @@ img{
 }
 
 .card-title{
-    width: 90%;
+    width: 85%;
     margin:5px;
     margin-left:10px;
     font-weight: bold;
@@ -190,4 +190,18 @@ a {
 
 li{
     list-style-type: square; 
+}
+
+.name-direction{
+    width:97%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mapButton{
+    width:13%;
+    background-color: rgb(71, 118, 92);
+    color:beige;
+    border-radius: 5px;  
+    margin-top: 10px;  
 }
