@@ -1,4 +1,8 @@
 // Begin of modification by Shreya M on Oct 10 2022 for adding Geocoding & NPS API ///
+var totalSearch;
+var mapFrameEl = document.getElementById("map-frame");
+var newName = document.getElementById("search-bar");
+var searchResultsEl = document.getElementById('search-results')
 
 function init() {
     var options = {
@@ -18,12 +22,10 @@ google.maps.event.addDomListener(window, 'load', init);
 function getData() {
     var latitude;
     var longitude;
-    // var fullAddress = document.getElementById("search-bar");
 
-    var newName = document.getElementById("search-bar");
+    totalSearch = newName.value
     console.log("new name::" + newName.value);
     
-    // 
     fetch(
         "https://api.openweathermap.org/geo/1.0/direct?q=" +
         newName.value +
@@ -79,7 +81,6 @@ function NPScall() {
             for (let item in products) {
 
                 /*Implementation - Card*/
-                let getPrincipalContainer = document.getElementById("search-results");
                 let createCard = document.createElement("div")
                 createCard.className = 'product-card';
                 getPrincipalContainer.append(createCard)
@@ -99,9 +100,7 @@ function NPScall() {
                 //Silvia Z- add map button
                 let createDirectionBtn = document.createElement('button');
                 createDirectionBtn.className = "mapButton";
-                createDirectionBtn.onclick = "getDirection()";
-                createDirectionBtn.name="createName.innerText" //???MD please double check here
-                createDirectionBtn.textContent = "Get Direction";
+                createDirectionBtn.textContent = "Directions";
                 createNameAndDirection.appendChild(createDirectionBtn);
 
                 createCard.appendChild(createNameAndDirection);
@@ -147,7 +146,6 @@ function NPScall() {
 
         })
     }
-    
     
     //Start of Modification by Silvia Z//
 
@@ -241,3 +239,24 @@ function NPScall() {
     }
 
   //End of Modification by Silvia Z//
+
+  searchResultsEl.addEventListener("click", function (event) {
+    if (event.target.className === "mapButton") {
+      var startingLocationURL = totalSearch
+        .replaceAll(",", "")
+        .split(" ")
+        .join("+");
+      var destinationURL = event.target.parentNode.firstChild.innerText
+        .split(" ")
+        .join("+");
+      mapFrameEl.setAttribute(
+        "src",
+        "https://www.google.com/maps/embed/v1/directions?key=AIzaSyB-W00dYSoIRqw5cgM-5x2sM42iO_LSBQo&origin=" +
+          startingLocationURL +
+          "&destination=" +
+          destinationURL +
+          "&avoid=tolls"
+      );
+      console.log(startingLocationURL + " " + destinationURL);
+    }
+  });
