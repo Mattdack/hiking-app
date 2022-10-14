@@ -1,23 +1,4 @@
 // Begin of modification by Shreya M for adding Modal in local summary ///////
-for (var i = 0; i < localStorage.length; i++) {
-
-    var city = localStorage.getItem("formData",i);
-     console.log(city);
-   
-}
-
-// Key count for local storage 
-var keyCount = 0;
-
-// To fetch the previous data into our table
-
-if(localStorage.getItem("formData")){
-   let tabelData = JSON.parse(window.localStorage.getItem('formData'));
-   console.log(tabelData.nPark)
-    
-}
-
-
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -70,38 +51,13 @@ window.onclick = function (event) {
             let createName = document.createElement("a")
             createName.className = "card-title1"
             // createName.innerText = "State:"+contents.citySate+ " Visited:"+contents.nPark + " ratings given:"+contents.rating+" Discription:"+contents.discription
-            createName.innerText =`State: ${contents.citySate}, Visited:${contents.nPark}
+            createName.innerText =`City: ${contents.citySate}, Visited:${contents.nPark}
             ratings given:${contents.rating}
              Discription:${contents.discription}`
             createStorage.appendChild(createName)
        
-    
+       }
 
-    // var myTableDiv = document.getElementById("myDynamicTable");
-
-    // var table = document.createElement('TABLE');
-    // table.border = '1';
-
-    // var tableBody = document.createElement('TBODY');
-    // table.appendChild(tableBody);
-
-    // for (var i = 0; i < 3; i++) {
-    //     var tr = document.createElement('TR');
-    //     tableBody.appendChild(tr);
-
-    //     for (var j = 0; j < 4; j++) {
-    //         var td = document.createElement('TD');
-    //         td.width = '75';
-    //         td.appendChild(document.createTextNode("State"+contents.citySate+"" + i + "," + j));
-    //         tr.appendChild(td);
-    //     }
-    // }
-    // myTableDiv.appendChild(table);
-}
-
-
-
-//   
 
 var myForm = document.querySelector("form#myForm");
 
@@ -116,12 +72,93 @@ var myForm = document.querySelector("form#myForm");
 
     }
     
-    let jsonData = JSON.stringify( data );
+    let jsonData = JSON.stringify(data);
     
     localStorage.setItem("formData", jsonData);
     // Just to test later will remove the below line.
-    alert("Data stored to localStorage itemName:'formData'");
+    // alert("Data stored to localStorage itemName:'formData'");
     
     return false;
   }
 //   End of modification by Shreya M for adding Modal in local summary ///////
+// /////////////////////////////////////////////////////////////////////////////////////////////////
+// var timeDisplay = $('#currentDay');
+// var $timeBlockEL=$(`#myForm`);
+// var taskArry = [];
+// // var $taskblock = $(".taskBlock");
+// //  to insert contents for each block element
+// function insertTasks(){
+
+//     $timeBlockEL.each(function(){
+//         var $thiscurrBlock =$(this);
+        
+//         const data = {};
+//         const dataToFetch = this.querySelectorAll("input, textarea, button, select");
+    
+//         for(let element of dataToFetch){
+      
+//           if( element && element.tagName && element.name )
+//             data[element.name] = element.value;
+    
+//         }
+//         console.log("Curr block=="+data)
+//         taskArry.push(data)
+//         console.log(taskArry)
+//     })
+    
+    
+//     localStorage.setItem("task", JSON.stringify(taskArry))
+//      console.log(taskArry)
+    
+//     }
+//     insertTasks()
+
+//     function renderTasks(){
+//         taskArry=localStorage.getItem("task")
+//         taskArry=JSON.parse(taskArry)
+//         for( var i=0; i< taskArry.length; i++){
+//             // var itemHour = taskArry[i].citySate;
+//             // var itemText= taskArry[i].nPark;
+//             // $("[data-hour=" + itemHour +"]").children("textarea").val(itemText)
+//             // // 
+//             let myTableDiv = document.getElementById("myDynamicTable");
+//             // let getPrincipalContainer = document.getElementById("search-results");
+//                 let createStorage = document.createElement("div")
+//                 createStorage.className = 'product-card1';
+//                 myTableDiv.append(createStorage)
+    
+//             // let createCard = document.createElement("div")
+//             let createName = document.createElement("a")
+//             createName.className = "card-title1"
+//             // createName.innerText = "State:"+contents.citySate+ " Visited:"+contents.nPark + " ratings given:"+contents.rating+" Discription:"+contents.discription
+//             createName.innerText =`City: ${taskArry[i].citySate}, Visited:${taskArry[i].nPark}
+//             ratings given:${taskArry[i].rating}
+//              Discription:${taskArry[i].discription}`
+//             createStorage.appendChild(createName)
+//         }
+//         console.log(taskArry)
+
+//     // 
+//    }
+
+
+    
+//     // saving it in local storage
+//     function saveArray(){
+//        localStorage.setItem("task", JSON.stringify(taskArry))
+//        renderTasks()
+//     }
+//     //  Main Function
+//     $(document).ready(function(){
+       
+        
+//         if(!localStorage.getItem("task")){
+//             insertTasks()
+//         }
+        
+       
+//         renderTasks()
+        
+//     myForm.onsubmit("click","button",saveArray)
+    
+//     })
