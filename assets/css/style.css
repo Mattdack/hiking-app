@@ -15,7 +15,7 @@
 }
 
 nav {
-    height: 7vh;
+    height: 10vh;
     background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
     width: 100%;
     color: white;
@@ -158,6 +158,7 @@ img{
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
+    color: rgb(154, 63, 63);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     font-size: 25px;
