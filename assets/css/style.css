@@ -1,4 +1,19 @@
 /* MD Modifictaion 10/09 start */
+.product-card {
+    -webkit-transition:  -webkit-transform .2s ease-out;
+    -moz-transition: -moz-transform .2s ease-out;
+    -o-transition: -o-transform .2s ease-out;
+    -ms-transition: -ms-transform .2s ease-out; 
+    transition: transform .2s ease-out; 
+}
+.product-card:hover {
+    box-shadow: 20px 20px 80px 10px rgb(160, 186, 151) inset;
+    -webkit-transform:scale(1.225);
+   -moz-transform:scale(1.225);
+   -o-transform:scale(1.225);
+   transform:scale(1.225);
+}
+
 nav {
     height: 7vh;
     background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
@@ -65,21 +80,21 @@ img{
 
 /* SilviaZ Modification 10/11 start*/
 #weather{
-    width:50%;
+    width:40%;
     display:flex;
     flex-wrap: wrap;
-    margin:10px;
+    margin:8px;
     justify-content: center;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .weather-box{
     background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
     color:aliceblue;
-    width:40%;
-    margin:10px;
-    padding-top:10px;
-    padding-bottom:10px;
+    width:30%;
+    margin:8px;
+    padding-top:8px;
+    padding-bottom:8px;
     border-radius: 5px;
     text-align: center;
 }
@@ -145,8 +160,9 @@ img{
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
+    font-size: 25px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
@@ -187,6 +203,22 @@ a {
 li{
     list-style-type: square; 
 }
+
+/* Modification By Shreya */
+#myDynamicTable{
+    color:  rgb(28, 88, 28);
+    background-color: tan; 
+}
+.product-card1{
+    background-color: tan; 
+}
+.card-title1{
+    text-align:left;
+    line-height: 1.5em;
+    color:rgb(28, 88, 28); 
+    background-color: tan;  
+}
+/* End of Modification by Shreya */
 
 .name-direction{
     width:97%;
