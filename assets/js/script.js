@@ -84,15 +84,27 @@ function NPScall() {
                 createCard.className = 'product-card';
                 getPrincipalContainer.append(createCard)
 
-                /*Implementing Names of the park */
+                /*Implementing Names of the park and map */
+                let createNameAndDirection = document.createElement("div");
+                createNameAndDirection.className="name-direction"
+
                 let createName = document.createElement("a")
                 createName.className = "card-title"
                 createName.innerText = parksData.data[item].fullName
-                createCard.appendChild(createName)
                 //  Sivlia Z- done - make the title is clickable
                 createName.href = parksData.data[item].url;
                 createName.target="_blank";
-                createCard.appendChild(createName)
+                createNameAndDirection.appendChild(createName)
+
+                //Silvia Z- add map button
+                let createDirectionBtn = document.createElement('button');
+                createDirectionBtn.className = "mapButton";
+                createDirectionBtn.onclick = "getDirection()";
+                createDirectionBtn.name="createName.innerText" //???MD please double check here
+                createDirectionBtn.textContent = "Get Direction";
+                createNameAndDirection.appendChild(createDirectionBtn);
+
+                createCard.appendChild(createNameAndDirection);
 
                 /*Implémentation de l'img - IMG*/
 

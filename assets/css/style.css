@@ -1,7 +1,22 @@
 /* MD Modifictaion 10/09 start */
+.product-card {
+    -webkit-transition:  -webkit-transform .2s ease-out;
+    -moz-transition: -moz-transform .2s ease-out;
+    -o-transition: -o-transform .2s ease-out;
+    -ms-transition: -ms-transform .2s ease-out; 
+    transition: transform .2s ease-out; 
+}
+.product-card:hover {
+    box-shadow: 20px 20px 80px 10px rgb(160, 186, 151) inset;
+    -webkit-transform:scale(1.225);
+   -moz-transform:scale(1.225);
+   -o-transform:scale(1.225);
+   transform:scale(1.225);
+}
+
 nav {
     height: 10vh;
-    background-color: rgb(28, 88, 28);
+    background-color: rgb(57, 93, 57);
     width: 100%;
     color: tan
 }
@@ -18,6 +33,7 @@ main {
     justify-content: center;
 
     background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/41/2d/80/waterton-lake-national.jpg?w=600&h=400&s=1");
+    /* https://images.wallpapersden.com/image/download/glacier-national-park-4k_bWpoa2eUmZqaraWkpJRobWllrWdma2U.jpg */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -25,16 +41,10 @@ main {
 
 #location {
     background-color: rgb(134, 162, 146);
-    padding: 50px;
+    padding: 30px;
     border-radius: 10px;
     width:70%;
     margin-top: 10px;
-}
-
-#search-and-weather{
-    width:100%;
-    display:flex;
-    flex-wrap: wrap;
 }
 
 #search-bar {
@@ -68,24 +78,23 @@ img{
 
 /* SilviaZ Modification 10/11 start*/
 #weather{
+    width:40%;
     display:flex;
     flex-wrap: wrap;
-    width:25%;
-    margin:10px;
+    margin:8px;
     justify-content: center;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .weather-box{
-    background-color: rgb(115, 145, 115);
+    background-color: rgb(133, 153, 133);
     color:aliceblue;
-    width:40%;
-    margin:10px;
-    padding-right:5px;
-    padding-left:5px;
-    padding-top:10px;
-    padding-bottom:10px;
+    width:30%;
+    margin:8px;
+    padding-top:8px;
+    padding-bottom:8px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .weatherIconImg {
@@ -103,7 +112,7 @@ img{
 }
 
 .card-title{
-    width: 90%;
+    width: 85%;
     margin:5px;
     margin-left:10px;
     font-weight: bold;
@@ -208,3 +217,17 @@ li{
     background-color: tan;  
 }
 /* End of Modification by Shreya */
+
+.name-direction{
+    width:97%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mapButton{
+    width:13%;
+    background-color: rgb(83, 121, 122);
+    color:beige;
+    border-radius: 5px;  
+    margin-top: 10px;  
+}
