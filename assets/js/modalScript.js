@@ -1,11 +1,5 @@
 // Begin of modification by Shreya M for adding Modal in local summary ///////
 
-
-// Key count for local storage 
-var keyCount = 0;
-
-
-
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -34,55 +28,84 @@ window.onclick = function (event) {
     }
 }
 
+// End of Modal work
 
-//  creating table //
-function addTable() {
-    var myTableDiv = document.getElementById("myDynamicTable");
+// Local Storage ///Starts here//
 
-    var table = document.createElement('TABLE');
-    table.border = '1';
-
-    var tableBody = document.createElement('TBODY');
-    table.appendChild(tableBody);
-
-    for (var i = 0; i < 3; i++) {
-        var tr = document.createElement('TR');
-        tableBody.appendChild(tr);
-
-        for (var j = 0; j < 4; j++) {
-            var td = document.createElement('TD');
-            td.width = '75';
-            td.appendChild(document.createTextNode("Cell " + i + "," + j));
-            tr.appendChild(td);
-        }
-    }
-    myTableDiv.appendChild(table);
-}
-addTable();
-
-
-
-//   
-
+// Saving it in local storage
+var taskArray = [];
 var myForm = document.querySelector("form#myForm");
 
-  myForm.onsubmit = function(){
+myForm.onsubmit = function () {
     const data = {};
     const dataToFetch = this.querySelectorAll("input, textarea, button, select");
 
-    for(let element of dataToFetch){
-  
-      if( element && element.tagName && element.name )
-        data[element.name] = element.value;
+    for (let element of dataToFetch) {
+
+        if (element && element.tagName && element.name)
+            data[element.name] = element.value;
 
     }
-    
-    let jsonData = JSON.stringify( data );
-    
+    taskArray.push(data)
+    console.log(taskArray)
+    let jsonData = JSON.stringify(taskArray);
+    console.log(jsonData)
+
     localStorage.setItem("formData", jsonData);
     // Just to test later will remove the below line.
-    alert("Data stored to localStorage itemName:'formData'");
-    
+    // alert("Data stored to localStorage itemName:'formData'");
+
     return false;
-  }
-  // End of modification by Shreya M for adding Modal in local summary ///////
+}
+
+const btnSubmit = document.getElementById('SuBtn');
+
+btnSubmit.addEventListener('click', function handleClick(event) {
+    // 👇️ if you are submitting a form (prevents page reload)
+    event.preventDefault();
+
+    const firstNameInput = document.getElementById('citySate');
+    const firstNameInput2 = document.getElementById('nPark');
+    const firstNameInput3 = document.getElementById('rating');
+    const firstNameInput4 = document.getElementById('discription');
+
+    // Send value to server
+    console.log(firstNameInput.value);
+
+    // 👇️ clear input field
+    firstNameInput.value = '';
+    firstNameInput2.value = '';
+    firstNameInput3.value = '';
+    firstNameInput4.value = '';
+});
+
+
+    $(document).ready(function () {
+
+        // Read and parse from localStorage
+        if (localStorage.getItem("formData")) {
+            var formDatap = JSON.parse(localStorage.getItem('formData'));
+
+            // Iterate through array, and set HTML of matching <span> element
+            $.each(formDatap, function (i, datum) {
+                //   $('#myDynamicTable' + datum.name).html(datum.value);
+                console.log(datum.nPark)
+
+                let myTableDiv = document.getElementById("myDynamicTable");
+                // let getPrincipalContainer = document.getElementById("search-results");
+                let createStorage = document.createElement("div")
+                createStorage.className = 'product-card1';
+                myTableDiv.append(createStorage)
+
+                let createCard = document.createElement("div")
+                let createName = document.createElement("a")
+                createName.className = "card-title1"
+                // createName.innerText = "State:"+contents.citySate+ " Visited:"+contents.nPark + " ratings given:"+contents.rating+" Discription:"+contents.discription
+                createName.innerText = `City: ${datum.citySate}, Visited:${datum.nPark}
+        ratings given:${datum.rating}
+         Discription:${datum.discription}`
+                createStorage.appendChild(createName)
+            });
+        }
+    });
+
