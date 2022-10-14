@@ -15,15 +15,15 @@
 }
 
 nav {
-    height: 10vh;
-    background-color: rgb(57, 93, 57);
+    height: 7vh;
+    background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
     width: 100%;
-    color: tan
+    color: white;
+    vertical-align: center;
 }
 
 main {
     height: 90vh;
-    background-color: tan;
     width: 100%;
 }
 
@@ -31,16 +31,18 @@ main {
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
+}
 
-    background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/41/2d/80/waterton-lake-national.jpg?w=600&h=400&s=1");
-    /* https://images.wallpapersden.com/image/download/glacier-national-park-4k_bWpoa2eUmZqaraWkpJRobWllrWdma2U.jpg */
+body {
+    background-image: url("https://images.wallpapersden.com/image/download/glacier-national-park-4k_bWpoa2eUmZqaraWkpJRobWllrWdma2U.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 #location {
-    background-color: rgb(134, 162, 146);
+    background:linear-gradient(rgb(134, 162, 146, 1), rgb(134, 162, 146, 0.2));
     padding: 30px;
     border-radius: 10px;
     width:70%;
@@ -87,7 +89,7 @@ img{
 }
 
 .weather-box{
-    background-color: rgb(133, 153, 133);
+    background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
     color:aliceblue;
     width:30%;
     margin:8px;
@@ -224,10 +226,33 @@ li{
     flex-wrap: wrap;
 }
 
-.mapButton{
-    width:13%;
-    background-color: rgb(83, 121, 122);
+.linkToMap{
+    width: auto;
+    height: auto;
+    background-color: rgb(115, 145, 115);
     color:beige;
     border-radius: 5px;  
     margin-top: 10px;  
+    text-align: center;
+    font-size: 170%;
+}
+
+#directions-div {
+    display: none;
+    background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
+    padding-left : 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;  
+    margin-top: 20px;
+    color: white;
+}
+
+#myBtn { 
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 5px;
+    padding: 20px;
+    color: white;
+    font-size: 150%;
+
 }

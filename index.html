@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HikingNAV</title>
+    <title>Let's Explore</title>
     <!-- MD Modification start 10/09-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- MD Modification end -->
@@ -19,12 +19,11 @@
 
 <body>
     <!-- MD Modification start 10/09-->
-    <nav class="">
-        <sub class="">BrandLogo</sub>
+    <nav>
+        <h1 style = "display: inline">Let's Explore!</h1>
         <ul class="right">
-            <li><a href="#localUserPage">Local summary</a></li>
             <!-- Begin Modification by Shreya M to Trigger/Open The Modal -->
-            <button id="myBtn">Click!</button>
+            <button id="myBtn">Personal Summary</button>
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -69,12 +68,30 @@
         <!-- Sivia Z Modification - add weather section -->
         <section id="weather"></section>
         <!-- Sivia Z Modification - add weather section end  -->
-        <section id="location" class="container ">
-           <input type="text" id="search-bar" placeholder="Your Location Here!" class="col-s6">
+        <section id="location" class="container hoverable">
+           <input type="text" id="search-bar" placeholder="Your Location Here!" class="col-s6 col-xl-s6">
         <!--Start of modification  by Shreya M for adding click button -->
             <button type="button" onclick="getData()" id="clickButton">Click Me</button>
            <!--End of modification  by Shreya M for adding click button -->
         </section>
+        <br>
+        <div id = "directions-div" class = "col-s12" >
+        <button id = "hideMap">Hide</button> <br>
+        <iframe
+        id = "map-frame"
+        width="1200"
+        height="666"
+        frameborder="0"
+        style="border: 0"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB-W00dYSoIRqw5cgM-5x2sM42iO_LSBQo
+                &origin=University+of+Washington
+                &destination=Western+Washington+University
+                &avoid=tolls"
+        allowfullscreen
+      >
+      </iframe>
+      </div>
         <div id="search-results"></div><br>
     </main>
     <!-- MD Modification end -->
