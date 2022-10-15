@@ -18,46 +18,43 @@
 </head>
 
 <body>
+    <div id="myModal" class="summary-modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- <p>🚴‍♂️........ Travel Journal 🚴........</p> -->
+            <section>
+                <form action="form.html" method="get" id="myForm">
+                    <fieldset>
+                        <legend>🚴‍♂️........ Travel Journal 🚴........</legend>
+                        <label for="citySate">Enter you City/State:</label><br/>
+                        <input type="text" id="cityState" placeholder="City/State"
+                            class="col-s6">
+                        <label for="nPark">Enter the National park you visited:</label><br/>
+                        <input type="text" id="nPark" placeholder="National Park Visited!"
+                            class="col-s6">
+                        <label for="rating">Give your rating on the scale of 1-10</label><br/>
+                        <input type="text" id="rating" placeholder="WOW factor!"
+                            class="col-s6">
+                        <label for="discription">Discription</label>
+                        <input type="text" id="description" placeholder="Activities I loved!"
+                            class="col-s6">
+                        <button id ="SuBtn" type="button">Submit</button>
+                    </fieldset>
+                </form>
+            </section>
+            <p>⛰Your Previous Summary⛰</p>
+            <div id="myDynamicTable"></div>
+        </div>
+    </div>
     <!-- MD Modification start 10/09-->
     <nav>
         <h1 style = "display: inline">Let's Explore!</h1>
         <ul class="right">
             <!-- Begin Modification by Shreya M to Trigger/Open The Modal -->
             <button id="myBtn">Personal Summary</button>
-
             <!-- The Modal -->
-            <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <!-- <p>🚴‍♂️........ Travel Journal 🚴........</p> -->
-                    <section>
-                        <form action="form.html" method="get" id="myForm">
-                            <fieldset>
-                                <legend>🚴‍♂️........ Travel Journal 🚴........</legend>
-                                <label for="citySate">Enter you City/State:</label><br />
-                                <input type="text" id="citySate" name="citySate" placeholder="City/State !"
-                                    class="col-s6"><br><br>
-                                <label for="nPark">Enter the National park you visited:</label><br />
-                                <input type="text" id="nPark" name="nPark" placeholder="National Park Visited!"
-                                    class="col-s6"><br><br>
-                                <label for="rating">Give your rating on the scale of 1-10</label><br />
-                                <input type="text" id="rating" name="rating" placeholder="WOW factor!"
-                                    class="col-s6"><br>
-                                <label for="discription">Discription</label><br />
-                                <input type="text" id="discription" name="discription" placeholder="Activities I loved!"
-                                    class="col-s6"><br>
-                                <input  id ="SuBtn" type="submit" value="Submit">
-                            </fieldset>
-                        </form>
-                    </section>
-
-                    <p>⛰Your Previous Summary⛰</p>
-                    <div id="myDynamicTable"></div>
-                </div>
-
-            </div>
+            
             <!--End of modification by Shreya M to Trigger/Open The Modal -->
         </ul>
 
@@ -71,7 +68,7 @@
         <section id="location" class="container hoverable">
            <input type="text" id="search-bar" placeholder="Your Location Here!" class="col-s6 col-xl-s6">
         <!--Start of modification  by Shreya M for adding click button -->
-            <button type="button" onclick="getData()" id="clickButton">Click Me</button>
+            <button type="button" onclick="getData()" id="clickButton">Go Explore</button>
            <!--End of modification  by Shreya M for adding click button -->
         </section>
         <br>
@@ -89,7 +86,7 @@
                 &destination=Western+Washington+University
                 &avoid=tolls"
         allowfullscreen
-      >
+        >
       </iframe>
       </div>
         <div id="search-results"></div><br>
@@ -103,7 +100,7 @@
         </script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/modalScript.js"></script>
-
+    <script src="./assets/js/summary.js"></script>
 
 </body>
 
