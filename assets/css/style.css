@@ -1,263 +1,260 @@
 /* MD Modifictaion 10/09 start */
 .product-card {
-    -webkit-transition:  -webkit-transform .2s ease-out;
-    -moz-transition: -moz-transform .2s ease-out;
-    -o-transition: -o-transform .2s ease-out;
-    -ms-transition: -ms-transform .2s ease-out; 
-    transition: transform .2s ease-out; 
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 .product-card:hover {
-    box-shadow: 20px 20px 80px 10px rgb(160, 186, 151) inset;
-    -webkit-transform:scale(1.225);
-   -moz-transform:scale(1.225);
-   -o-transform:scale(1.225);
-   transform:scale(1.225);
+  box-shadow: 20px 20px 80px 10px rgb(160, 186, 151) inset;
+  -webkit-transform: scale(1.225);
+  -moz-transform: scale(1.225);
+  -o-transform: scale(1.225);
+  transform: scale(1.225);
 }
 
 nav {
-    overflow: hidden;
-    background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
-    width: 100%;
-    color: white;
-    vertical-align: center;
+  overflow: hidden;
+  background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
+  width: 100%;
+  color: white;
+  vertical-align: center;
 }
 
 main {
-    height: 90vh;
-    width: 100%;
+  height: 90vh;
+  width: 100%;
 }
 
 #canvas {
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 body {
-    background-image: url("https://images.wallpapersden.com/image/download/glacier-national-park-4k_bWpoa2eUmZqaraWkpJRobWllrWdma2U.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+  background-image: url("../images/Website-Background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #location {
-    background:linear-gradient(rgb(134, 162, 146, 1), rgb(134, 162, 146, 0.2));
-    padding: 30px;
-    border-radius: 10px;
-    width:70%;
-    margin-top: 10px;
+  background: linear-gradient(rgb(134, 162, 146, 1), rgb(134, 162, 146, 0.2));
+  padding: 30px;
+  border-radius: 10px;
+  width: 70%;
+  margin-top: 10px;
 }
 
 #search-bar {
-    background-color: white;
-    border-radius: 5px;
+  background-color: white;
+  border-radius: 5px;
 }
 
-#clickButtin{
-    background-color: antiquewhite;
-    border-radius: 5px;
+#clickButtin {
+  background-color: antiquewhite;
+  border-radius: 5px;
 }
 
 /* MD Modification 10/09 End */
 /* Begin of modification by Shreya M for dynamically created cards in JS file */
-img{
-    height: 200px;
-    width:260px;
-    margin: 5px;
+img {
+  height: 200px;
+  width: 260px;
+  margin: 5px;
 }
-.product-card{
-    width:80%;
-    margin-top:10px;
-    display:flex;
-    flex-wrap: wrap;
-    background-color: aliceblue;
-    border-radius: 10px;
-
+.product-card {
+  width: 80%;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: aliceblue;
+  border-radius: 10px;
 }
 /* End of modification by Shreya M for dynamically created cards in JS file */
 
-
 /* SilviaZ Modification 10/11 start*/
-#weather{
-    width:40%;
-    display:flex;
-    flex-wrap: wrap;
-    margin:8px;
-    justify-content: center;
-    font-size: 13px;
+#weather {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8px;
+  justify-content: center;
+  font-size: 13px;
 }
 
-.weather-box{
-    background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
-    color:aliceblue;
-    width:30%;
-    margin:8px;
-    padding-top:8px;
-    padding-bottom:8px;
-    border-radius: 5px;
-    text-align: center;
+.weather-box {
+  background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
+  color: aliceblue;
+  width: 30%;
+  margin: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .weatherIconImg {
-    max-width:30px;
-    height: 30px;
+  max-width: 30px;
+  height: 30px;
 }
 
 /* SilviaZ Modification 10/11 end*/
 
-#search-results{
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    width:100%;
-    justify-content: center;
+#search-results {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
 }
 
-.card-title{
-    width: 85%;
-    margin:5px;
-    margin-left:10px;
-    font-weight: bold;
-    font-size: xx-large;
+.card-title {
+  width: 85%;
+  margin: 5px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: xx-large;
 }
 
-.img-list{
-    display:flex;
-    flex-wrap: wrap;
-    margin:3px;
+.img-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3px;
 }
 
-.card-img-top{
-    width:30%;  
-    border-radius: 5px;  
+.card-img-top {
+  width: 30%;
+  border-radius: 5px;
 }
 
-.park-activity-div{
-    width:60%;
-    display:flex; 
-    flex-wrap:wrap;
-    margin:10px;
+.park-activity-div {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
 }
 
 /* // Begin of modification by Shreya M for adding Modal in local summary /////// */
 
 /* The Modal (background) */
-.summary-modal{
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    color: rgb(154, 63, 63);
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    font-size: 25px;
-    border: 1px solid #888;
-    width: 60%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-/* // End of modification by Shreya M for adding Modal in local summary /////// */
-.park-activities{
-    color:rgb(75, 50, 12);
-    margin-right:3px;
-    font-size: medium;
-
+.summary-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.product-sheet-link{
-    width:90%;
-    margin-left:10px;
-    margin-bottom: 10px;
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  color: rgb(154, 63, 63);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  font-size: 25px;
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* // End of modification by Shreya M for adding Modal in local summary /////// */
+.park-activities {
+  color: rgb(75, 50, 12);
+  margin-right: 3px;
+  font-size: medium;
+}
+
+.product-sheet-link {
+  width: 90%;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 a {
-    color:black;
-    outline: none;
-    text-decoration: none;
+  color: black;
+  outline: none;
+  text-decoration: none;
 }
 
-li{
-    list-style-type: square; 
+li {
+  list-style-type: square;
 }
 
 /* Modification By Shreya */
-.product-card1{
-    background-color: tan; 
+.product-card1 {
+  background-color: tan;
 }
-.card-title1{
-    text-align:left;
-    line-height: 1.5em;
-    color:rgb(28, 88, 28); 
-    background-color: tan;  
+.card-title1 {
+  text-align: left;
+  line-height: 1.5em;
+  color: rgb(28, 88, 28);
+  background-color: tan;
 }
 /* End of Modification by Shreya */
 
-.name-direction{
-    width:97%;
-    display: flex;
-    flex-wrap: wrap;
+.name-direction {
+  width: 97%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.linkToMap{
-    width: auto;
-    height: auto;
-    background-color: rgb(115, 145, 115);
-    color:beige;
-    border-radius: 5px;  
-    margin-top: 10px;  
-    text-align: center;
-    font-size: 170%;
+.linkToMap {
+  width: auto;
+  height: auto;
+  background-color: rgb(115, 145, 115);
+  color: beige;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 170%;
 }
 
 #directions-div {
-    display: none;
-    background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
-    padding-left : 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    border-radius: 5px;  
-    margin-top: 20px;
-    color: white;
+  display: none;
+  background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: white;
 }
 
-#myBtn { 
-    background-color: rgb(0, 0, 0, 0);
-    border-radius: 5px;
-    padding: 20px;
-    color: white;
-    font-size: 150%;
+#myBtn {
+  background-color: rgb(0, 0, 0, 0);
+  border-radius: 5px;
+  padding: 20px;
+  color: white;
+  font-size: 150%;
 }
 
-.placeList{
-    margin:3px;
-    border-radius: 5px;
-    background-color: tan; 
-    color:  rgb(28, 88, 28);
-    font-size: large;
+.placeList {
+  margin: 3px;
+  border-radius: 5px;
+  background-color: tan;
+  color: rgb(28, 88, 28);
+  font-size: large;
 }

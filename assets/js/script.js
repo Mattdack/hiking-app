@@ -63,7 +63,7 @@ function NPScall() {
   var requestUrlNPS =
     "https://developer.nps.gov/api/v1/parks?stateCode=" +
     sc +
-    "&limit=10&api_key=" +
+    "&api_key=" +
     apiKey1;
   fetch(requestUrlNPS)
     //
