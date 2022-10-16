@@ -32,7 +32,7 @@ function getData() {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       latitude = data[0].lat;
       longitude = data[0].lon;
 
@@ -52,12 +52,12 @@ function NPScall() {
   // to get state code via google API///
   // var sampleLocation = "Boston, MA, USA";
   var resLocation = searchBardata.value.split(",");
-  console.log(resLocation);
-  console.log(resLocation[1].replace(/,/g, ""));
+  // console.log(resLocation);
+  // console.log(resLocation[1].replace(/,/g, ""));
   var stateCode = resLocation[1].replace(/,/g, "");
   var stateCodeLower = stateCode.toLowerCase();
   var sc = stateCodeLower.trim();
-  console.log("StateCode:" + sc);
+  // console.log("StateCode:" + sc);
   var apiKey1 = "rezSm4lpwSFY7eCcu9JiJaOp8bxxfzOsYTzKa742";
   // console.log("https://developer.nps.gov/api/v1/parks?stateCode=" + stateCodeLower + "&limit=10&api_key="+ apiKey1)
   var requestUrlNPS =
@@ -69,7 +69,7 @@ function NPScall() {
     //
     .then((response) => response.json())
     .then((parksData) => {
-        console.log(parksData)
+        // console.log(parksData)
       const products = parksData.data;
       //Silvia Z added- clear the last search info
       let getPrincipalContainer = document.getElementById("search-results");
@@ -117,13 +117,13 @@ function NPScall() {
         /*Implementing Activities Section*/
 
         var allAct = parksData.data[item].activities;
-        console.log(allAct);
+        // console.log(allAct);
         let createActivitySec = document.createElement("div");
         createActivitySec.className = "park-activity-div";
         for (var i = 0; i < allAct.length; i++) {
           let createPrice = document.createElement("li");
           let currentAct = allAct[i].name;
-          console.log(currentAct);
+          // console.log(currentAct);
           createPrice.className = "park-activities";
           createPrice.innerHTML = currentAct;
           createActivitySec.appendChild(createPrice);
@@ -190,7 +190,7 @@ function getWeatherApi(latitude, longitude) {
             Wind: nextDayData.list[6].wind.speed,
             Humidity: nextDayData.list[6].main.humidity,
           };
-          console.log(nextDayInfo);
+          // console.log(nextDayInfo);
 
           var weatherSection = document.querySelector("#weather");
           weatherSection.textContent = "";

@@ -15,7 +15,7 @@
 }
 
 nav {
-    height: 10vh;
+    overflow: hidden;
     background: linear-gradient(rgb(134, 162, 146), rgb(134, 162, 146, 0.2));
     width: 100%;
     color: white;
@@ -107,6 +107,7 @@ img{
 /* SilviaZ Modification 10/11 end*/
 
 #search-results{
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     width:100%;
@@ -142,7 +143,7 @@ img{
 /* // Begin of modification by Shreya M for adding Modal in local summary /////// */
 
 /* The Modal (background) */
-.modal {
+.summary-modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -206,10 +207,6 @@ li{
 }
 
 /* Modification By Shreya */
-#myDynamicTable{
-    color:  rgb(28, 88, 28);
-    background-color: tan; 
-}
 .product-card1{
     background-color: tan; 
 }
@@ -255,5 +252,12 @@ li{
     padding: 20px;
     color: white;
     font-size: 150%;
+}
 
+.placeList{
+    margin:3px;
+    border-radius: 5px;
+    background-color: tan; 
+    color:  rgb(28, 88, 28);
+    font-size: large;
 }
